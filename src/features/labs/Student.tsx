@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { Student } from '../../models';
+import { Student } from '@/models';
+// import { Student } from '../../models';
 
 
 export interface StudentCardProps {
-    student: Student
+    student: Student;
 }
 
 export function StudentCard ({student}: StudentCardProps) {

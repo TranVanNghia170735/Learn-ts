@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {Footer, Header } from './components/common';
 import {  StudentCard } from './features/labs/Student';
-import { Student } from './models/student';
+import { Student } from './models';
 function App() {
 
   const john: Student= {
