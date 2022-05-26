@@ -1,19 +1,18 @@
 import React from 'react';
 import './App.css';
 import {Footer, Header } from './components/common';
-import { Student } from './features/labs/Student';
+import {  StudentCard } from './features/labs/Student';
+import { Student } from './models/student';
 function App() {
+
+  const john: Student= {
+    name: 'John',
+    age: 3,
+  }
   return (
     <div>
         <Header></Header>
-        <Student 
-        
-          name="Easy Frontend a"
-          age = {18}
-          isHero
-          hobbyList={['eat', 'code','sleep']}
-          sayHello ={() => {}}
-        />
+        <StudentCard student={john}/>
         <Footer></Footer> 
     </div>
   ); 

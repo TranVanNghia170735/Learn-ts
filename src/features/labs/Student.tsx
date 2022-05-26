@@ -1,15 +1,14 @@
 import * as React from 'react';
+import { Student } from '../../models';
 
-export interface StudentProps {
-    name?: string
-    age: number
-    isHero: boolean
-    hobbyList: string[]
-    
-    sayHello: () => void
+
+export interface StudentCardProps {
+    student: Student
 }
 
-export function Student ({name ='NghiaTV8', isHero = false}: StudentProps) {
+export function StudentCard ({student}: StudentCardProps) {
+  const {name, isHero} = student 
+
   return (
     <div>
         Student: {name} {isHero  ? 'hero': 'no-hero'}
