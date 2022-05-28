@@ -4,7 +4,7 @@ import { Student } from '@/models';
 
 export interface StudentCardProps {
     student: Student
-    onClick?: (student: Student) => void
+    onClick?: (student: Student) => any
 }
 
 export function StudentCard ({student, onClick}: StudentCardProps) {
