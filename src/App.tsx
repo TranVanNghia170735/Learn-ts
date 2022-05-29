@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import {Footer, Header, Widget } from './components/common';
 import { MainLayout } from './components/Layout';
@@ -7,17 +7,29 @@ import {  StudentCard } from './features/labs/Student';
 import { Student } from './models';
 function App() {
 
+  const [loading, setLoading] = useState(true)
+
+  useEffect (() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000)
+  }, []
+)
+
   const john: Student= {
     name: 'John',
     age: 3,
   }
-
+  
   function handleStudentClick(student: Student){
     console.log("student click", student);
   }
 
+  // if (loading ) return <p>loading...</p>
+
   return (
     <div>
+        {loading && <p>Loading...</p>}
         <MainLayout>
           <StudentCard student={john} onClick={handleStudentClick}/>
         </MainLayout>
