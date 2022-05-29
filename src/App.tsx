@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import './App.css';
 import {Footer, Header, Widget } from './components/common';
 import { MainLayout } from './components/Layout';
@@ -27,9 +27,22 @@ function App() {
 
   // if (loading ) return <p>loading...</p>
 
+  const studentList = [
+    { id: 1, name: 'easy'},
+    { id: 5, name: 'frontend'},
+  ]
+
   return (
     <div>
-        {loading && <p>Loading...</p>}
+        <ul>
+           {studentList.map((student) => (
+             <Fragment key ={student.id}>
+                <li >{student.name}</li>
+                <li >{student.name}</li>
+             </Fragment>
+           ))}
+        </ul>
+        {/* {loading && <p>Loading...</p>}
         <MainLayout>
           <StudentCard student={john} onClick={handleStudentClick}/>
         </MainLayout>
@@ -51,7 +64,7 @@ function App() {
           <div><Widget title="Revenue Source">Chart 2</Widget></div>
           <div><Widget title="Earning">Chart 3</Widget></div>
           <div><Widget title="Overview1">Chart 4</Widget></div>
-        </div>
+        </div> */}
     </div>
   ); 
 }
